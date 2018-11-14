@@ -1,0 +1,13 @@
+all: adventure
+
+adventure: obj/dungeon.o obj/goblin.o obj/main.o
+	g++ -Wall -g -o adventure obj/dungeon.o obj/goblin.o obj/main.o
+
+obj/main.o: src/main.cpp include/dungeon.h
+	g++ -Wall -g -I./include -c src/main.cpp -o obj/main.o
+
+obj/dungeon.o: src/dungeon.cpp include/dungeon.h
+	g++ -Wall -g -I./include -c src/dungeon.cpp -o obj/dungeon.o
+	
+obj/goblin.o: src/goblin.cpp include/evil.h
+	g++ -Wall -g -I./include -c src/goblin.cpp -o obj/goblin.o
