@@ -1,6 +1,6 @@
 # Compiler
-CC = g++
-CPPFLAGS = -g
+CXX = g++
+CXXFLAGS = -g
 
 # Special variables
 VPATH = src/:obj/:include/
@@ -24,7 +24,7 @@ BROWSER = firefox
 COMPRESS = zip
 
 # Pattern-specific variables
-%.o: CPPFLAGS += -Wall -I./include -c
+%.o: CXXFLAGS += -Wall -I./include -c
 
 # Target-specific variables
 $(PROJECT): OBJECTS += $(MAINOBJ)
@@ -40,14 +40,14 @@ $(OBJECTS): | $(OBJ)
 
 # File rules
 $(PROJECT): $(OBJECTS) $(MAINOBJ)
-	$(CC) $(CPPFLAGS) -o $@ $?
+	$(CXX) $(CXXFLAGS) -o $@ $?
 	-mv $? $(OBJ)
 
 $(OBJECTS): %.o: %.cpp %.h
-	$(CC) $(CPPFLAGS) -o $@ $<
+	$(CXX) $(CXXFLAGS) -o $@ $<
 
 $(MAINOBJ): $(MAINSRC)
-	$(CC) $(CPPFLAGS) -o $@ $<
+	$(CXX) $(CXXFLAGS) -o $@ $<
 
 # Directory rules
 $(OBJ):
