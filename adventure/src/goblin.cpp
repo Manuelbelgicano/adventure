@@ -2,8 +2,8 @@
  * @file goblin.cpp
  * @author Manuel Gachs Ballegeer
  */
- 
-#include"evil.h"
+
+#include"goblin.h"
 #include<iostream>
 #include<stdlib.h>
 

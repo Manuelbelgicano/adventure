@@ -12,10 +12,10 @@ obj/main.o: src/main.cpp
 
 obj/dungeon.o: src/dungeon.cpp
 	g++ -Wall -g -I./include -c src/dungeon.cpp -o obj/dungeon.o
-	
-obj/goblin.o: src/goblin.cpp include/evil.h
+
+obj/goblin.o: src/goblin.cpp include/goblin.h
 	g++ -Wall -g -I./include -c src/goblin.cpp -o obj/goblin.o
-	
+
 clean-hard: clean-exec clean-obj clean-doxygen;
 
 clean-exec:
@@ -26,18 +26,18 @@ clean-obj:
 
 clean-doxygen:
 	rm -rf doc/html doc/latex
-	
+
 doxy: clean-doxygen
 	doxygen doc/adventure.doxy
 	firefox doc/html/index.html
-	
-zip: clean-hard| zipdir
+
+zip: clean-hard | zipdir
 	-rm -rf zip/*
 	zip -r zip/adventure.zip *
 
 zipdir:
 	mkdir -p zip/
-	
+
 help:
 	@echo "Posibles opciones:"
 	@echo "		rebuild		Reconstruye el proyecto desde cero"

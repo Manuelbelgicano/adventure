@@ -3,7 +3,7 @@
  * @author Manuel Gachs Ballegeer
  */
 
-#include"evil.h"
+#include"goblin.h"
 #include<string>
 
 #ifndef _DUNGEON_H
@@ -31,13 +31,6 @@ bool walk(int &coins);
  * @return El daño del golpe
  */
 int punch();
-/**
- * @brief Crea un evento aleatorio
- * @brief dead Si el usuario está muerto. ES MODIFICADO
- * @param goblin Si el usuario se enfrenta a un trasgo. ES MODIFICADO
- * @param coins Las monedas ganadas por el usuario
- * @return El evento creado
- */
 std::string happens(bool &dead,bool &goblin,int &coins);
 
 #endif
