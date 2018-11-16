@@ -1,0 +1,6 @@
+./obj/*
+./zip/*
+bin/adventure
+./doc/latex/*
+./doc/html/*
+
